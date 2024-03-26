@@ -23,9 +23,9 @@ def extract_pdf_content(pdf_path):
                         "رقم القاطع": elements[8:10],
                         "المدرج": elements[11:13],
                         "مكان المدرج": elements[14:15],
-                        "الفترة": elements[15]  # Adjusted index to 7
+                        "الفترة": elements[15]  
                     })
-                if len(elements) ==15:  # Check if line has all required elements
+                if len(elements) ==15:
                     data.append({
                         "رقم القيد": elements[0],
                         "الاسم": " ".join(elements[1:5]),
@@ -36,7 +36,7 @@ def extract_pdf_content(pdf_path):
                         "مكان المدرج": elements[13],
                         "الفترة": elements[14]  # Adjusted index to 7
                     })
-                if len(elements) ==17:  # Check if line has all required elements
+                if len(elements) ==17:  
                     data.append({
                         "رقم القيد": elements[0],
                         "الاسم": " ".join(elements[1:6]),
@@ -69,7 +69,7 @@ def main():
                 st.write("Student ID not found!")
 
 if __name__ == "__main__":
-    pdf_path = r"C:\Users\seyf2\Downloads\Documents\idnum.pdf"  # Use raw string literal
+    pdf_path = pdf_path = "idnum.pdf"
     data = extract_pdf_content(pdf_path)
     df = pd.DataFrame(data)
     main()
